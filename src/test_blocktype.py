@@ -20,19 +20,14 @@ class TestBlockType(unittest.TestCase):
         self.assertEqual(block_to_blocktype(block), BlockType.ORDERED_LIST_ITEM)
 
     def test_blockquote_block(self):
-        block = "<blockquote>This is a blockquote</blockquote>"
+        block = "> This is a blockquote"
         self.assertEqual(block_to_blocktype(block), BlockType.BLOCKQUOTE)
 
     def test_code_block(self):
-        block = "<code>print('Hello, world!')</code>"
+        block = "```\nprint('Hello, world!')\n```"
         self.assertEqual(block_to_blocktype(block), BlockType.CODE_BLOCK)
 
-    def test_malformed_blockquote(self):
-        block = "<blockquote>This is a malformed blockquote"
-        with self.assertRaises(ValueError):
-            block_to_blocktype(block)
-
     def test_malformed_code_block(self):
-        block = "<code>print('Hello, world!')"
+        block = "```\nprint('Hello, world!')"
         with self.assertRaises(ValueError):
             block_to_blocktype(block)

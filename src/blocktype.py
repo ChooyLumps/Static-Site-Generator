@@ -17,12 +17,10 @@ def block_to_blocktype(block: str) -> BlockType:
         return BlockType.LIST_ITEM
     elif block.startswith("1. "):
         return BlockType.ORDERED_LIST_ITEM
-    elif block.startswith("<blockquote>"):
-        if not block.endswith("</blockquote>"):
-            raise ValueError("Malformed blockquote block")
+    elif block.startswith("> "):
         return BlockType.BLOCKQUOTE
-    elif block.startswith("<code>"):
-        if not block.endswith("</code>"):
+    elif block.startswith("```"):
+        if not block.endswith("```"):
             raise ValueError("Malformed code block")
         return BlockType.CODE_BLOCK
     else:
