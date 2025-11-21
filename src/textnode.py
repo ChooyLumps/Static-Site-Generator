@@ -8,7 +8,7 @@ class TextType(Enum):
     CODE = "code"
     LINK = "link"
     IMAGE = "image"
-    LIST = "list"
+
 
 class TextNode:
     def __init__(self, text: str, text_type: TextType = TextType.TEXT, url: str = None):
@@ -35,8 +35,6 @@ class TextNode:
             return LeafNode(tag="i", value=self.text)
         elif self.text_type == TextType.CODE:
             return LeafNode(tag="code", value=self.text)
-        elif self.text_type == TextType.LIST:
-            return LeafNode(tag="li", value=self.text)
         elif self.text_type == TextType.LINK:
             if self.url is None:
                 raise ValueError("URL must be provided for link text type")

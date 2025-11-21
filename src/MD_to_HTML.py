@@ -47,12 +47,18 @@ def block_to_heading(block: str) -> HTMLNode:
 
 def block_to_list_item(block: str) -> HTMLNode:
     text = block[2:].strip()  # Remove "- " prefix
-    children = text_to_children(text)
+    grand_children = text_to_children(text)
+    children = []
+    for grand_child in grand_children:
+        children.append(ParentNode(tag="li", children=[grand_child]))
     return ParentNode(tag="ul", children=children)  
 
 def block_to_ordered_list_item(block: str) -> HTMLNode:
-    new_text = re.sub(r"\d.", "-", block) # Replace "1. ", "2. ", etc. with "- "
-    children = text_to_children(new_text.strip())
+    new_text = re.sub(r"\d.", "", block) # Replace "1. ", "2. ", etc. with ""
+    grand_children = text_to_children(new_text.strip())
+    children = []
+    for grand_child in grand_children:
+        children.append(ParentNode(tag="li", children=[grand_child]))
     return ParentNode(tag="ol", children=children)
 
 def block_to_blockquote(block: str) -> HTMLNode:
