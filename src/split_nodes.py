@@ -11,6 +11,10 @@ def split_nodes_image(old_nodes: list) -> list:
         if not isinstance(node, TextNode):
             raise TypeError("All nodes must be instances of TextNode")
 
+        if node.text_type != TextType.TEXT:
+            new_nodes.append(node)
+            continue
+
         text = node.text
         # If there's an opening image marker but no valid image pattern, treat as error
         if "![" in text and not _IMG_RE.search(text):
@@ -37,6 +41,10 @@ def split_nodes_link(old_nodes: list) -> list:
     for node in old_nodes:
         if not isinstance(node, TextNode):
             raise TypeError("All nodes must be instances of TextNode")
+
+        if node.text_type != TextType.TEXT:
+            new_nodes.append(node)
+            continue
 
         text = node.text
         # If there's an opening link marker but no valid link pattern, treat as error

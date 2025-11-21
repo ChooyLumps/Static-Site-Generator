@@ -11,7 +11,8 @@ def split_nodes_delimiter(old_nodes: list, delimiter: str, text_type: TextType) 
                 parts = node.text.split(delimiter)
                 for i, part in enumerate(parts):
                     if i % 2 == 0:
-                        new_nodes.append(TextNode(part, TextType.TEXT))
+                        if part:
+                            new_nodes.append(TextNode(part, TextType.TEXT))
                     else:
                         new_nodes.append(TextNode(part, text_type))
             else:
