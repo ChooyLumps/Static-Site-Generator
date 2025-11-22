@@ -20,8 +20,6 @@ def block_to_blocktype(block: str) -> BlockType:
     elif block.startswith("> "):
         return BlockType.BLOCKQUOTE
     elif block.startswith("```"):
-        if not block.endswith("```"):
-            raise ValueError("Malformed code block")
         return BlockType.CODE_BLOCK
     else:
         return BlockType.PARAGRAPH

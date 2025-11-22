@@ -26,8 +26,3 @@ class TestBlockType(unittest.TestCase):
     def test_code_block(self):
         block = "```\nprint('Hello, world!')\n```"
         self.assertEqual(block_to_blocktype(block), BlockType.CODE_BLOCK)
-
-    def test_malformed_code_block(self):
-        block = "```\nprint('Hello, world!')"
-        with self.assertRaises(ValueError):
-            block_to_blocktype(block)
