@@ -1,6 +1,6 @@
 import unittest
 
-from extractors import extract_markdown_images, extract_markdown_links
+from extractors import extract_markdown_images, extract_markdown_links, extract_markdown_title
 
 class TestExtractors(unittest.TestCase):
     def test_extract_markdown_images(self):
@@ -52,3 +52,11 @@ class TestExtractors(unittest.TestCase):
     def test_malformed_markdown_link(self):
         matches = extract_markdown_links("This is a malformed link [link text](missing-end")
         self.assertListEqual([], matches)
+
+    def test_extract_markdown_title(self):
+        title = extract_markdown_title("# This is a Title")
+        self.assertEqual("This is a Title", title)
+
+    def test_extract_markdown_title_no_title(self):
+        with self.assertRaises(Exception):
+            extract_markdown_title("This is not a title")
