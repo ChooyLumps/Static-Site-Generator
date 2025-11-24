@@ -1,13 +1,11 @@
 import os
 import shutil
 
-def purge_and_copy_from_static_to_public() -> None:
-    public_dir = "public"
-    static_dir = "static"
-    if os.path.exists(public_dir):
-        shutil.rmtree(public_dir)
+def purge_and_copy(start_path:str, dest_path:str) -> None:
+    if os.path.exists(dest_path):
+        shutil.rmtree(dest_path)
     else:
-        os.makedirs(public_dir)
-    if not os.path.exists(static_dir):
+        os.makedirs(dest_path)
+    if not os.path.exists(start_path):
         raise FileNotFoundError(f"")
-    shutil.copytree(static_dir, public_dir, dirs_exist_ok=True)
+    shutil.copytree(start_path, dest_path, dirs_exist_ok=True)

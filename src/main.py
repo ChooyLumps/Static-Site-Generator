@@ -1,9 +1,16 @@
-from generators import generate_page
-from copier import purge_and_copy_from_static_to_public
+import sys
+
+from generators import generate_page_recursive
+from copier import purge_and_copy
 
 def main():
-    purge_and_copy_from_static_to_public()
-    generate_page("content/index.md", "template.html", "public/index.html")
+    if len(sys.argv) > 1:
+        basepath = sys.argv[1]
+    else:
+        basepath = "/"
+    target = "docs"
+    purge_and_copy("static", f"{target}")
+    generate_page_recursive("content", "template.html", f"{target}", basepath)
 
 
 main()
