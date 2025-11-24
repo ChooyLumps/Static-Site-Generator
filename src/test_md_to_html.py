@@ -63,7 +63,7 @@ Even more paragraph text.
         html = node.to_html()
         self.assertEqual(
             html,
-            "<div><blockquote><p>This is a blockquote. It has multiple lines. <b>Bold text</b> inside blockquote.</p></blockquote></div>",
+            "<div><blockquote>This is a blockquote. It has multiple lines. <b>Bold text</b> inside blockquote.</blockquote></div>",
         )
     
     def test_list_items(self):
@@ -115,5 +115,5 @@ def example():
         html = node.to_html()
         self.assertEqual(
             html,
-            "<div><p>Some <b>bolded</b> and <i>italicised</i> words. This scentence has an <img src=\"image_url\" alt=\"image\" /> inline. This one has a <a href=\"https://example.com\">link</a> inline.</p><pre><code>def example():\n    return \"Hello, World!\"\n</code></pre><ul><li>First list item. It has a <b>bold</b> word and a <a href=\"https://example.com\">link</a>.</li><li>Second list item. It has an <i>italic</i> word and an <img src=\"image_url\" alt=\"image\" />.</li></ul><blockquote><p>This is a blockquote inside mixed content. This blockquote has <b>bold</b> text. This is the second line of the blockquote. It has an <i>italic</i> word and an <img src=\"image_url\" alt=\"image\" />. This third line has a <a href=\"https://example.com\">link</a>.</p></blockquote><ol><li>First ordered item. It has a <b>bold</b> word and a <a href=\"https://example.com\">link</a>.</li><li>Second ordered item. It has an <i>italic</i> word and an <img src=\"image_url\" alt=\"image\" />.</li></ol></div>",
+            "<div><p>Some <b>bolded</b> and <i>italicised</i> words. This scentence has an <img src=\"image_url\" alt=\"image\" /> inline. This one has a <a href=\"https://example.com\">link</a> inline.</p><pre><code>def example():\n    return \"Hello, World!\"\n</code></pre><ul><li>First list item. It has a <b>bold</b> word and a <a href=\"https://example.com\">link</a>.</li><li>Second list item. It has an <i>italic</i> word and an <img src=\"image_url\" alt=\"image\" />.</li></ul><blockquote>This is a blockquote inside mixed content. This blockquote has <b>bold</b> text. This is the second line of the blockquote. It has an <i>italic</i> word and an <img src=\"image_url\" alt=\"image\" />. This third line has a <a href=\"https://example.com\">link</a>.</blockquote><ol><li>First ordered item. It has a <b>bold</b> word and a <a href=\"https://example.com\">link</a>.</li><li>Second ordered item. It has an <i>italic</i> word and an <img src=\"image_url\" alt=\"image\" />.</li></ol></div>",
         )

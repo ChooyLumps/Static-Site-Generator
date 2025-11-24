@@ -83,8 +83,7 @@ def block_to_ordered_list_item(block: str) -> HTMLNode:
 def block_to_blockquote(block: str) -> HTMLNode:
     text = re.sub(r"^> ?", "", block, flags=re.MULTILINE).strip() # Remove "> " prefixes
     children = text_to_children(text)
-    quote_paragraph = ParentNode(tag="p", children=children)
-    return ParentNode(tag="blockquote", children=[quote_paragraph])
+    return ParentNode(tag="blockquote", children= children)
 
 def block_to_code_block(block: str) -> HTMLNode:
     code_text = re.sub(r"^```[\w]*\n?", "", block)  # Remove opening ```
