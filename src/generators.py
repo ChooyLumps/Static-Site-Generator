@@ -12,6 +12,7 @@ def generate_page(markdown_path: str, template_path: str, output_path: str, base
     content_html = html_nodes.to_html()
     title = extract_markdown_title(markdown)
     final_html = template.replace("{{ Title }}", title).replace("{{ Content }}", content_html).replace('href="/', f'href="{basepath}').replace('src="/', f'src="{basepath}')
+    print(final_html)
     if not os.path.exists(os.path.dirname(output_path)):
         os.makedirs(os.path.dirname(output_path))
     with open(output_path, "w") as f:
