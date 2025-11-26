@@ -1,6 +1,5 @@
 body {
   background-color: #FEFFF4;
-  color: #f0e6d1;
   font-family: "Luminari", "Georgia", serif;
   font-size: 25px;
   letter-spacing: 2px;
@@ -70,7 +69,7 @@ ol {
 }
 
 code {
-  background-color: #3c3c42;
+  background-color: #FEFFF4;
   border-radius: 6px;
   color: #e9c46a;
   padding: 0.4em 0.6em;
@@ -82,7 +81,7 @@ pre code {
 }
 
 pre {
-  background-color: #3c3c42;
+  background-color: #FEFFF4;
   border-radius: 6px;
   padding: 1em;
   overflow: auto;
@@ -105,7 +104,7 @@ img {
   max-width: 100%;
   height: auto;
   border-radius: 6px;
-  border: 3px solid #3c3c42;
+  border: 3px solid #FEFFF4;
   box-shadow: 3px 3px 6px #000;
 }
 
@@ -120,7 +119,7 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #3c3c42;
+  background-color: #FEFFF4;
   border-radius: 6px;
   border: 3px solid #1f1c25;
 }
@@ -131,7 +130,7 @@ img {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: #3c3c42 #1f1c25;
+  scrollbar-color: #FEFFF4 #1f1c25;
 }
 
 ::-webkit-scrollbar-corner {
