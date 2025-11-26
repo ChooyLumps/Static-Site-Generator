@@ -1,8 +1,16 @@
-column-count: 2;
 body {
   background-color: #1f1c25;
   color: #f0e6d1;
   font-family: "Luminari", "Georgia", serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #000000;
+  font-weight: normal;
+  text-decoration: none;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
   line-height: 1.7;
   margin: 0;
   padding: 20px;
