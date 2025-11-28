@@ -20,10 +20,9 @@ h3,
 h4,
 h5,
 h6 {
-  color: #951a1a;
+  color: #000000;
   margin-top: 24px;
   margin-bottom: 16px;
-  text-shadow: 2px 2px 4px #000;
 }
 
 h1 {
@@ -32,10 +31,13 @@ h1 {
 
 h2 {
   font-size: 2em;
+  color: #e0a96d;
+  text-shadow: 2px 2px 4px #000;
 }
 
 h3 {
   font-size: 1.5em;
+  color: #e0a96d;
 }
 
 h4,
